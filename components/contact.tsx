@@ -1,11 +1,51 @@
 "use client"
 
+import { useState, type FormEvent } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Mail, Phone, MessageCircle, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MessageCircle, MapPin, Clock, Loader2, CheckCircle2 } from "lucide-react"
+
+type FormStatus = "idle" | "sending" | "success" | "error"
 
 export function Contact() {
   const { t } = useLanguage()
+  const [status, setStatus] = useState<FormStatus>("idle")
+  const [errorMsg, setErrorMsg] = useState("")
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus("sending")
+    setErrorMsg("")
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      units: (form.elements.namedItem("units") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      if (!res.ok) {
+        const body = await res.json()
+        throw new Error(body.error || "Something went wrong.")
+      }
+
+      setStatus("success")
+      form.reset()
+    } catch (err: unknown) {
+      setStatus("error")
+      setErrorMsg(err instanceof Error ? err.message : t("Etwas ist schiefgelaufen.", "Something went wrong."))
+    }
+  }
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "enes@aeconsultingllc.de", href: "mailto:enes@aeconsultingllc.de" },
@@ -32,7 +72,7 @@ export function Contact() {
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Contact form */}
           <ScrollReveal>
-            <form action="mailto:enes@aeconsultingllc.de" method="POST" encType="text/plain" className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-navy">
@@ -111,10 +151,30 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="rounded-sm bg-gold px-8 py-3.5 text-sm font-semibold text-navy transition-all hover:bg-gold-light"
+                disabled={status === "sending"}
+                className="flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-3.5 text-sm font-semibold text-navy transition-all hover:bg-gold-light disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t("Nachricht senden", "Send Message")}
+                {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" />}
+                {status === "sending"
+                  ? t("Wird gesendet...", "Sending...")
+                  : t("Nachricht senden", "Send Message")}
               </button>
+
+              {status === "success" && (
+                <div className="flex items-center gap-2 rounded-sm bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800">
+                  <CheckCircle2 className="h-4 w-4 shrink-0" />
+                  {t(
+                    "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden.",
+                    "Thank you! Your message has been sent successfully. We will get back to you within 24 hours."
+                  )}
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="rounded-sm bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-800">
+                  {errorMsg || t("Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.", "Something went wrong. Please try again.")}
+                </div>
+              )}
             </form>
           </ScrollReveal>
 
