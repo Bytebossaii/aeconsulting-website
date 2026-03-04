@@ -20,6 +20,10 @@ const jost = Jost({
 export const metadata: Metadata = {
   title: 'A&E Consulting | Back-Office Outsourcing for Property Management',
   description: 'Professional back-office outsourcing for property management companies (Hausverwaltungen) in DACH and US East Coast. Based in Pristina, Kosovo.',
+  icons: {
+    icon: '/favicon.jpg',
+    apple: '/favicon.jpg',
+  },
 }
 
 export const viewport = {
