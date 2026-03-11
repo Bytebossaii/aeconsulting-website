@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Clock, MessageSquare, Globe, Shield } from "lucide-react"
+import { Clock, MessageSquare, Globe, Shield, Linkedin } from "lucide-react"
 
 export function About() {
   const { t } = useLanguage()
