@@ -91,9 +91,9 @@ export function About() {
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
                     <span className="font-serif text-2xl font-bold text-gold">EH</span>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-cream">Enes Haziri</h3>
+                  <h3 className="font-serif text-2xl font-bold text-cream">Enes Haziri & Ardit Tahiri</h3>
                   <p className="mt-1 text-sm text-gold">
-                    {t("Gründer & CEO", "Founder & CEO")}
+                    {t(""Gründer & CEO · Mitgründer & COO", "Founder & CEO · Co-Founder & COO"")}
                   </p>
                 </div>
 
