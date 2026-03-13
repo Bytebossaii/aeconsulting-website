@@ -93,7 +93,7 @@ export function About() {
                   </div>
                   <h3 className="font-serif text-2xl font-bold text-cream">Enes Haziri</h3>
                   <p className="mt-1 text-sm text-gold">
-                    {t("Gründer & CEO", "Founder & CEO")}
+                    {t("Gründer & Geschäftsführer", "Founder & Managing Director")}
                   </p>
                 </div>
 
