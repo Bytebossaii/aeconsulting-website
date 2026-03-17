@@ -19,13 +19,16 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: 'A&E Consulting | Back-Office Outsourcing for Property Management',
-  description: 'Professional back-office outsourcing for property management companies (Hausverwaltungen) in DACH and US East Coast. Based in Pristina, Kosovo.',
+  description:
+    'Professional back-office outsourcing for property management companies (Hausverwaltungen) in DACH and US East Coast. Based in Pristina, Kosovo.',
   icons: {
     icon: '/favicon.jpg',
     apple: '/favicon.jpg',
   },
+  verification: {
+    google: 'fZbgFlo-4pEVG3cOYrkkCjEeu487zg1p8pVUx743SIY',
+  },
 }
-
 export const viewport = {
   themeColor: '#0d2035',
 }
