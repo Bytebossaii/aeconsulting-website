@@ -109,27 +109,8 @@
         .serif-overlap {
             text-shadow: 0 0 40px rgba(255,255,255,0.8);
         }
-        .lang-toggle {
-            background: transparent;
-            color: #475569;
-            transition: background-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
-                        color 320ms cubic-bezier(0.22, 1, 0.36, 1),
-                        box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: background-color, color, transform;
-        }
-        .lang-toggle:hover {
-            color: #000a1e;
-        }
-        .lang-toggle:active {
-            transform: scale(0.96);
-        }
-        .lang-toggle.active {
-            background: #000a1e;
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 10, 30, 0.18);
-        }
         .lang-toggle-group {
+            position: relative;
             display: inline-flex;
             align-items: center;
             gap: 0.125rem;
@@ -138,6 +119,42 @@
             padding: 0.125rem;
             background: rgba(255, 255, 255, 0.92);
             flex-shrink: 0;
+            isolation: isolate;
+        }
+        .lang-toggle-group::before {
+            content: '';
+            position: absolute;
+            top: 0.125rem;
+            bottom: 0.125rem;
+            left: 0.125rem;
+            width: calc(50% - 0.125rem);
+            border-radius: 9999px;
+            background: #000a1e;
+            box-shadow: 0 8px 20px rgba(0, 10, 30, 0.18);
+            transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 0;
+        }
+        .lang-toggle-group[data-active-lang='de']::before {
+            transform: translateX(100%);
+        }
+        .lang-toggle {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            color: #475569;
+            transition: color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: color, transform;
+        }
+        .lang-toggle:hover {
+            color: #000a1e;
+        }
+        .lang-toggle.active,
+        .lang-toggle.active:hover {
+            color: #ffffff;
+        }
+        .lang-toggle:active {
+            transform: scale(0.96);
         }
         @media (max-width: 420px) {
             .mobile-header-actions {
@@ -166,7 +183,7 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_founders" href="#founders">About Us</a>
 </div>
 <div class="mobile-header-actions flex items-center gap-3 shrink-0">
-<div class="lang-toggle-group">
+<div class="lang-toggle-group" data-active-lang="en">
 <button class="lang-toggle lang-toggle-mobile active px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
 <button class="lang-toggle lang-toggle-mobile px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
@@ -809,6 +826,9 @@
 
             document.querySelectorAll("[data-lang-switch]").forEach((button) => {
                 button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+            });
+            document.querySelectorAll(".lang-toggle-group").forEach((group) => {
+                group.setAttribute("data-active-lang", lang);
             });
         }
 
