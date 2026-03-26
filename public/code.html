@@ -92,9 +92,9 @@
 </head>
 <body class="bg-surface font-body text-on-surface antialiased">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<div class="text-xl font-headline font-bold tracking-tighter text-blue-950 dark:text-white">
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-7xl mx-auto gap-3">
+<div class="text-base sm:text-xl font-headline font-bold tracking-tighter text-blue-950 dark:text-white">
                 A<span class="text-secondary px-0.5">&amp;</span>E Consulting LLC
             </div>
 <div class="hidden md:flex items-center gap-10">
@@ -108,7 +108,7 @@
 <button class="lang-toggle active px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
 <button class="lang-toggle px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95" data-i18n="cta_book">
+<button class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95" data-i18n="cta_book">
                 Book a Call
             </button>
 </div>
@@ -116,30 +116,30 @@
 </nav>
 <main>
 <!-- HERO SECTION -->
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<section class="relative min-h-screen flex items-center pt-24 sm:pt-20 overflow-hidden bg-surface">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-15 grayscale" data-alt="Modern corporate office interior with floor-to-ceiling windows overlooking a twilight city skyline, soft cool lighting, premium architectural feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYMYHhXA5oGyyBQhGMPjdkNyH5JiTekMuGQrApCosj1TNC3jNEwCanyKIhVdVn7Mtrnnw5yfEKPu-JBWPO2JbdNVwLEGzhSXWdrowQP-_KTciArJuZCWVqwXp8NCY6j7-UUJo8Lyt22P6RWPX9PUMv59j-PxIZE_8sIvfNR2efWImwMB3yive1ZK5S7VDLSZLEDtG6xRBtAq3RJboXVaNvSqtRPFKiXMv2g-1lpzZISAhkAdYuPK0l5bOjyaaYltqDxK3vRD-3jryC"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
 </div>
-<div class="container mx-auto px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-10 sm:gap-12 items-center">
 <div class="lg:col-span-8">
 <span class="inline-block text-secondary font-semibold tracking-[0.3em] uppercase text-xs mb-6" data-i18n="hero_eyebrow">Operations Reimagined</span>
-<h1 class="text-6xl md:text-8xl font-headline font-bold text-primary leading-none tracking-tight mb-8">
+<h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-headline font-bold text-primary leading-tight sm:leading-none tracking-tight mb-6 sm:mb-8">
                         <span data-i18n="hero_line_1">Scale Your Operations</span> <br/>
 <span class="text-secondary italic font-normal" data-i18n="hero_emphasis">Without</span> <span data-i18n="hero_line_2">Scaling Costs</span>
                     </h1>
-<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-12" data-i18n="hero_body">
+<p class="text-base sm:text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-8 sm:mb-12" data-i18n="hero_body">
                         We help DACH-region and US East Coast companies outsource back-office operations, customer support, and IT services to a highly skilled, German- and English-speaking team in Kosovo.
                     </p>
-<div class="flex flex-wrap gap-4 mb-16">
-<button class="bg-primary text-on-primary px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-300" data-i18n="cta_book">
+<div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-16">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300" data-i18n="cta_book">
                             Book a Call
                         </button>
-<button class="bg-surface-container-lowest border border-outline-variant/30 text-primary px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300" data-i18n="cta_schedule">
+<button class="w-full sm:w-auto bg-surface-container-lowest border border-outline-variant/30 text-primary px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300" data-i18n="cta_schedule">
                             Schedule a Meeting
                         </button>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-outline-variant/20">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-outline-variant/20">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-secondary text-2xl">schedule</span>
 <span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant" data-i18n="hero_stat_1">CET Timezone</span>
@@ -161,18 +161,18 @@
 </div>
 </section>
 <!-- WHY KOSOVO (ABOUT) -->
-<section class="py-32 bg-surface-container-low" id="about">
-<div class="container mx-auto px-8 max-w-7xl">
-<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<section class="py-20 sm:py-24 lg:py-32 bg-surface-container-low" id="about">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-20 gap-8">
 <div class="max-w-2xl">
 <span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block" data-i18n="about_eyebrow">Strategic Advantage</span>
-<h2 class="text-5xl font-headline font-bold text-primary tracking-tight" data-i18n="about_title">Why Kosovo?</h2>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary tracking-tight" data-i18n="about_title">Why Kosovo?</h2>
 </div>
 <p class="text-on-surface-variant max-w-md italic border-l-2 border-secondary pl-6" data-i18n="about_intro">
                         Leveraging Southeast Europe's emerging tech hub to provide premium talent for DACH and US East Coast companies at a fraction of standard costs.
                     </p>
 </div>
-<div class="grid md:grid-cols-3 gap-12">
+<div class="grid md:grid-cols-3 gap-6 sm:gap-10 md:gap-12">
 <div class="space-y-4">
 <h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_1_title">Zero Latency Partnership</h3>
 <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_latency">Operating in the same timezone as the DACH region and overlapping efficiently with the US East Coast, ensuring seamless real-time collaboration with your core teams.</p>
@@ -201,15 +201,15 @@
 </div>
 </section>
 <!-- SERVICES -->
-<section class="py-32 bg-white" id="services">
-<div class="container mx-auto px-8 max-w-7xl">
-<div class="text-center mb-24">
-<h2 class="text-5xl font-headline font-bold text-primary mb-6">Comprehensive Support Modules</h2>
+<section class="py-20 sm:py-24 lg:py-32 bg-white" id="services">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<div class="text-center mb-12 sm:mb-24">
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary mb-6">Comprehensive Support Modules</h2>
 <p class="text-on-surface-variant max-w-xl mx-auto">Modular services designed to integrate directly into your existing infrastructure.</p>
 </div>
-<div class="grid md:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
 <!-- S1 -->
-<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<div class="bg-white p-6 sm:p-8 lg:p-10 group hover:bg-surface-container-low transition-colors duration-500">
 <span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">database</span>
 <h4 class="text-lg font-headline font-bold text-primary mb-4">Back-Office Operations</h4>
 <ul class="text-xs space-y-3 text-on-surface-variant">
@@ -286,7 +286,7 @@
 </ul>
 </div>
 <!-- Contact Box -->
-<div class="bg-primary-container p-10 flex flex-col justify-center">
+<div class="bg-primary-container p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
 <p class="text-on-primary-container text-sm font-medium mb-6">Need a custom solution?</p>
 <a class="text-secondary font-bold tracking-widest uppercase text-xs hover:underline inline-flex items-center gap-2" href="#">
                             Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -296,36 +296,36 @@
 </div>
 </section>
 <!-- HOW IT WORKS -->
-<section class="py-32 bg-surface" id="how-it-works">
-<div class="container mx-auto px-8 max-w-7xl">
-<div class="grid lg:grid-cols-2 gap-24 items-start">
+<section class="py-20 sm:py-24 lg:py-32 bg-surface" id="how-it-works">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 <div>
 <span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block">Our Methodology</span>
-<h2 class="text-5xl font-headline font-bold text-primary mb-8">A Seamless Integration Process</h2>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary mb-8">A Seamless Integration Process</h2>
 <p class="text-on-surface-variant mb-12">We don't just provide staff; we build extensions of your business culture and technical standards.</p>
-<div class="space-y-12">
-<div class="flex gap-8">
+<div class="space-y-8 sm:space-y-12">
+<div class="flex gap-4 sm:gap-8">
 <span class="text-4xl font-headline text-outline-variant font-light">01</span>
 <div>
 <h4 class="text-xl font-headline font-bold text-primary mb-2">Define Needs</h4>
 <p class="text-sm text-on-surface-variant">In-depth consultation to map your current workflows and identify the exact skill sets required.</p>
 </div>
 </div>
-<div class="flex gap-8">
+<div class="flex gap-4 sm:gap-8">
 <span class="text-4xl font-headline text-outline-variant font-light">02</span>
 <div>
 <h4 class="text-xl font-headline font-bold text-primary mb-2">Find &amp; Train</h4>
 <p class="text-sm text-on-surface-variant">We source candidates from our pre-vetted pool and provide custom training based on your internal tools.</p>
 </div>
 </div>
-<div class="flex gap-8">
+<div class="flex gap-4 sm:gap-8">
 <span class="text-4xl font-headline text-outline-variant font-light">03</span>
 <div>
 <h4 class="text-xl font-headline font-bold text-primary mb-2">Interview</h4>
 <p class="text-sm text-on-surface-variant">You meet the top candidates to ensure a cultural and professional fit. You make the final call.</p>
 </div>
 </div>
-<div class="flex gap-8">
+<div class="flex gap-4 sm:gap-8">
 <span class="text-4xl font-headline text-outline-variant font-light">04</span>
 <div>
 <h4 class="text-xl font-headline font-bold text-primary mb-2">Start &amp; Scale</h4>
@@ -336,29 +336,29 @@
 </div>
 <div class="relative group">
 <div class="absolute -inset-4 border border-secondary/20 translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
-<img class="w-full h-[600px] object-cover shadow-2xl" data-alt="Professional diverse team in a high-end bright office environment collaborating around a glass conference table with laptops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg0jObX6gS2kGr3jU7jpImBJ3d7kQI1pgMiYYggcMsNzJNEo5qMsva-Hyl4Oa5xegaEPtKJZo7TR4MkidRmnCVRJaMGNPp8sYrN3-na3Y0DIoR0M6Ok5Fs0nNK53AKl-GpD0sYFFzZeM33Qr7E4IrB2Mainq5-vzJJmAM5kIrzpQ_zJ0ugUxi4J5LCR5baNMKt4HEzfQFTzXA1_hN658GerM8p-D6Ch--iu5IjbFTfkL0NyCSb9VMs_sGs01C0oigMyQAYzcJwf0XR"/>
+<img class="w-full h-[280px] sm:h-[420px] lg:h-[600px] object-cover shadow-2xl" data-alt="Professional diverse team in a high-end bright office environment collaborating around a glass conference table with laptops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg0jObX6gS2kGr3jU7jpImBJ3d7kQI1pgMiYYggcMsNzJNEo5qMsva-Hyl4Oa5xegaEPtKJZo7TR4MkidRmnCVRJaMGNPp8sYrN3-na3Y0DIoR0M6Ok5Fs0nNK53AKl-GpD0sYFFzZeM33Qr7E4IrB2Mainq5-vzJJmAM5kIrzpQ_zJ0ugUxi4J5LCR5baNMKt4HEzfQFTzXA1_hN658GerM8p-D6Ch--iu5IjbFTfkL0NyCSb9VMs_sGs01C0oigMyQAYzcJwf0XR"/>
 </div>
 </div>
 </div>
 </section>
 <!-- VALUE PROPOSITION -->
-<section class="py-24 bg-primary text-white overflow-hidden relative">
-<div class="container mx-auto px-8 max-w-7xl relative z-10">
-<div class="grid md:grid-cols-4 gap-16">
+<section class="py-16 sm:py-24 bg-primary text-white overflow-hidden relative">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
 <div class="text-center">
-<div class="text-6xl font-headline font-bold text-secondary mb-4">40%</div>
+<div class="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-secondary mb-4">40%</div>
 <p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold" data-i18n="cost_label">Lower Operational Costs</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-bold text-secondary mb-4">0</div>
+<div class="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-secondary mb-4">0</div>
 <p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Long-term Contracts</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-bold text-secondary mb-4">24h</div>
+<div class="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-secondary mb-4">24h</div>
 <p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Avg. Response Time</p>
 </div>
 <div class="text-center">
-<div class="text-6xl font-headline font-bold text-secondary mb-4">100%</div>
+<div class="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-secondary mb-4">100%</div>
 <p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Scalability Rate</p>
 </div>
 </div>
@@ -366,15 +366,15 @@
 <div class="absolute top-0 right-0 w-1/3 h-full bg-secondary-container/5 -skew-x-12"></div>
 </section>
 <!-- FOUNDERS -->
-<section class="py-32 bg-white" id="founders">
-<div class="container mx-auto px-8 max-w-7xl">
-<div class="mb-20">
+<section class="py-20 sm:py-24 lg:py-32 bg-white" id="founders">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<div class="mb-12 sm:mb-20">
 <span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block" data-i18n="leaders_eyebrow">Leadership</span>
-<h2 class="text-5xl font-headline font-bold text-primary" data-i18n="leaders_title">Strategic Oversight</h2>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary" data-i18n="leaders_title">Strategic Oversight</h2>
 </div>
-<div class="grid md:grid-cols-2 gap-20">
-<div class="flex flex-col md:flex-row gap-8 items-start">
-<a class="block flex-shrink-0 w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low" href="https://www.linkedin.com/in/enes-haziri-2639bb270" rel="noopener noreferrer" target="_blank">
+<div class="grid md:grid-cols-2 gap-10 lg:gap-20">
+<div class="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
+<a class="block flex-shrink-0 w-full max-w-[18rem] md:w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low mx-auto md:mx-0" href="https://www.linkedin.com/in/enes-haziri-2639bb270" rel="noopener noreferrer" target="_blank">
 <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of Enes Haziri" src="/assets/enes-haziri.png"/>
 </a>
 <div>
@@ -383,8 +383,8 @@
 <p class="text-sm text-on-surface-variant leading-relaxed">With a background in international business strategy, Enes bridges the gap between DACH operational standards and Kosovo's talent pool. Expert in high-growth organizational design.</p>
 </div>
 </div>
-<div class="flex flex-col md:flex-row gap-8 items-start">
-<a class="block flex-shrink-0 w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low" href="https://www.linkedin.com/in/ardittahiri/" rel="noopener noreferrer" target="_blank">
+<div class="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
+<a class="block flex-shrink-0 w-full max-w-[18rem] md:w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low mx-auto md:mx-0" href="https://www.linkedin.com/in/ardittahiri/" rel="noopener noreferrer" target="_blank">
 <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of Ardit Tahiri" src="/assets/ardit-tahiri.png"/>
 </a>
 <div>
@@ -397,9 +397,9 @@
 </div>
 </section>
 <!-- FINAL CTA -->
-<section class="py-32 bg-surface-container-low">
-<div class="container mx-auto px-8 max-w-4xl text-center">
-<h2 class="text-5xl font-headline font-bold text-primary mb-8 tracking-tight" data-i18n="final_title">Ready to scale your operations?</h2>
+<section class="py-20 sm:py-24 lg:py-32 bg-surface-container-low">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary mb-8 tracking-tight" data-i18n="final_title">Ready to scale your operations?</h2>
 <p class="text-lg text-on-surface-variant mb-12" data-i18n="final_body">Join the growing list of DACH and US East Coast firms gaining a competitive edge through our Pristina-based delivery center.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
 <button class="bg-primary text-on-primary px-12 py-5 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all" data-i18n="cta_book">
@@ -413,7 +413,7 @@
 </section>
 </main>
 <!-- FOOTER -->
-<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 px-8">
+<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 px-4 sm:px-6 lg:px-8">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 <div class="md:col-span-1">
 <div class="text-lg font-headline font-bold text-blue-950 dark:text-white mb-6">A<span class="text-secondary px-0.5">&amp;</span>E Consulting LLC</div>
