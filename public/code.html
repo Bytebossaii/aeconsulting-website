@@ -109,9 +109,25 @@
         .serif-overlap {
             text-shadow: 0 0 40px rgba(255,255,255,0.8);
         }
+        .lang-toggle {
+            background: transparent;
+            color: #475569;
+            transition: background-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                        color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: background-color, color, transform;
+        }
+        .lang-toggle:hover {
+            color: #000a1e;
+        }
+        .lang-toggle:active {
+            transform: scale(0.96);
+        }
         .lang-toggle.active {
             background: #000a1e;
             color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 10, 30, 0.18);
         }
         .lang-toggle-group {
             display: inline-flex;
