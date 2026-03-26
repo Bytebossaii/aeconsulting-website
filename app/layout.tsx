@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   description:
     'Professional back-office outsourcing for property management companies (Hausverwaltungen) in DACH and US East Coast. Based in Pristina, Kosovo.',
   icons: {
-    icon: '/favicon.jpg',
-    apple: '/favicon.jpg',
+    icon: '/images/ae-consulting-logo.jpg',
+    apple: '/images/ae-consulting-logo.jpg',
   },
   verification: {
     google: 'fZbgFlo-4pEVG3cOYrkkCjEeu487zg1p8pVUx743SIY',
