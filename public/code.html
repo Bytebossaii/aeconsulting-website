@@ -113,6 +113,27 @@
             background: #000a1e;
             color: #ffffff;
         }
+        .lang-toggle-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.125rem;
+            border: 1px solid rgba(116, 119, 127, 0.35);
+            border-radius: 9999px;
+            padding: 0.125rem;
+            background: rgba(255, 255, 255, 0.92);
+            flex-shrink: 0;
+        }
+        @media (max-width: 420px) {
+            .mobile-header-actions {
+                gap: 0.375rem;
+            }
+            .lang-toggle-mobile {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                font-size: 9px;
+                letter-spacing: 0.14em;
+            }
+        }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface antialiased">
@@ -128,10 +149,10 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_process" href="#how-it-works">How It Works</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_founders" href="#founders">About Us</a>
 </div>
-<div class="flex items-center gap-3 shrink-0">
-<div class="hidden sm:flex items-center border border-outline-variant/50 rounded-full p-1 bg-white/90">
-<button class="lang-toggle active px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
-<button class="lang-toggle px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
+<div class="mobile-header-actions flex items-center gap-3 shrink-0">
+<div class="lang-toggle-group">
+<button class="lang-toggle lang-toggle-mobile active px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
+<button class="lang-toggle lang-toggle-mobile px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
 <button class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95 whitespace-nowrap" data-i18n="cta_book">
                 Book a Call
@@ -626,6 +647,11 @@
         function applyLanguage(lang) {
             const dict = translations[lang] || translations.en;
             document.documentElement.lang = lang;
+            try {
+                localStorage.setItem("ae-language", lang);
+            } catch (error) {
+                console.warn("Language preference could not be saved.", error);
+            }
             document.title = lang === "de"
                 ? "A&E Consulting LLC | DACH- & US-East-Coast-Operations"
                 : "A&E Consulting LLC | DACH & US East Coast Operations";
@@ -725,7 +751,14 @@
             button.addEventListener("click", () => applyLanguage(button.getAttribute("data-lang-switch")));
         });
 
-        applyLanguage("en");
+        let initialLanguage = "en";
+        try {
+            initialLanguage = localStorage.getItem("ae-language") || "en";
+        } catch (error) {
+            console.warn("Language preference could not be loaded.", error);
+        }
+
+        applyLanguage(initialLanguage);
     </script>
 </body></html>
 
