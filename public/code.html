@@ -154,9 +154,9 @@
 <button class="lang-toggle lang-toggle-mobile active px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
 <button class="lang-toggle lang-toggle-mobile px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
-<button class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95 whitespace-nowrap" data-i18n="cta_book">
-                Book a Call
-            </button>
+<a class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95 whitespace-nowrap" data-i18n="cta_schedule" href="#schedule-meeting">
+                Schedule a Meeting
+            </a>
 </div>
 </div>
 </nav>
@@ -178,12 +178,9 @@
                         We help DACH-region and US East Coast companies outsource back-office operations, customer support, and IT services to a highly skilled, German- and English-speaking team in Kosovo.
                     </p>
 <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-16">
-<button class="w-full sm:w-auto bg-primary text-on-primary px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300" data-i18n="cta_book">
-                            Book a Call
-                        </button>
-<button class="w-full sm:w-auto bg-surface-container-lowest border border-outline-variant/30 text-primary px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300" data-i18n="cta_schedule">
+<a class="w-full sm:w-auto bg-surface-container-lowest border border-outline-variant/30 text-primary px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300 text-center" data-i18n="cta_schedule" href="#schedule-meeting">
                             Schedule a Meeting
-                        </button>
+                        </a>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-outline-variant/20">
 <div class="flex items-center gap-3">
@@ -443,17 +440,36 @@
 </div>
 </section>
 <!-- FINAL CTA -->
-<section class="py-20 sm:py-24 lg:py-32 bg-surface-container-low">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary mb-8 tracking-tight" data-i18n="final_title">Ready to scale your operations?</h2>
-<p class="text-lg text-on-surface-variant mb-12" data-i18n="final_body">Join the growing list of DACH and US East Coast firms gaining a competitive edge through our Pristina-based delivery center.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary text-on-primary px-12 py-5 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all" data-i18n="cta_book">
-                        Book a Call
+<section class="py-20 sm:py-24 lg:py-32 bg-surface-container-low" id="schedule-meeting">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+<div class="bg-white border border-outline-variant/40 shadow-sm p-8 sm:p-10 lg:p-12">
+<div class="text-center mb-10">
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-primary mb-6 tracking-tight" data-i18n="final_title">Schedule a Meeting</h2>
+<p class="text-lg text-on-surface-variant max-w-2xl mx-auto" data-i18n="final_body">Send us your details and we will get back to you to arrange a meeting.</p>
+</div>
+<form class="space-y-5 text-left" id="schedule-form">
+<div class="grid gap-5 sm:grid-cols-2">
+<div>
+<label class="block text-xs font-bold tracking-[0.15em] uppercase text-primary mb-3" for="schedule-name" data-i18n="form_name_label">Name</label>
+<input class="w-full border border-outline-variant/40 bg-surface px-4 py-4 text-sm text-primary placeholder:text-on-surface-variant/60 focus:border-secondary focus:ring-0" id="schedule-name" name="name" placeholder="Your name" required type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-[0.15em] uppercase text-primary mb-3" for="schedule-email" data-i18n="form_email_label">Email</label>
+<input class="w-full border border-outline-variant/40 bg-surface px-4 py-4 text-sm text-primary placeholder:text-on-surface-variant/60 focus:border-secondary focus:ring-0" id="schedule-email" name="email" placeholder="you@example.com" required type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold tracking-[0.15em] uppercase text-primary mb-3" for="schedule-message" data-i18n="form_message_label">Message</label>
+<textarea class="w-full min-h-40 border border-outline-variant/40 bg-surface px-4 py-4 text-sm text-primary placeholder:text-on-surface-variant/60 focus:border-secondary focus:ring-0" id="schedule-message" name="message" placeholder="Tell us a bit about what you need." required></textarea>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
+<p class="text-sm text-on-surface-variant" data-i18n="form_helper">We will reply to organize the best meeting time for you.</p>
+<button class="bg-primary text-on-primary px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-300 disabled:opacity-60" data-i18n="form_submit" type="submit">
+                        Schedule Meeting
                     </button>
-<button class="bg-white border border-outline-variant/50 text-primary px-12 py-5 text-sm font-bold tracking-widest uppercase hover:bg-surface-container transition-all" data-i18n="cta_contact">
-                        Get in Touch
-                    </button>
+</div>
+<p class="hidden text-sm font-medium" id="schedule-form-status" role="status"></p>
+</form>
 </div>
 </div>
 </section>
@@ -503,7 +519,6 @@
                 nav_about: "Why Kosovo?",
                 nav_process: "How It Works",
                 nav_founders: "About Us",
-                cta_book: "Book a Call",
                 cta_schedule: "Schedule a Meeting",
                 cta_contact: "Get in Touch",
                 hero_eyebrow: "Operations Reimagined",
@@ -534,8 +549,19 @@
                 leaders_eyebrow: "Leadership",
                 leaders_title: "Strategic Oversight",
                 founder_role: "Founder & CEO",
-                final_title: "Ready to scale your operations?",
-                final_body: "Join the growing list of DACH and US East Coast firms gaining a competitive edge through our Pristina-based delivery center.",
+                final_title: "Schedule a Meeting",
+                final_body: "Send us your details and we will get back to you to arrange a meeting.",
+                form_name_label: "Name",
+                form_email_label: "Email",
+                form_message_label: "Message",
+                form_helper: "We will reply to organize the best meeting time for you.",
+                form_submit: "Schedule Meeting",
+                form_name_placeholder: "Your name",
+                form_email_placeholder: "you@example.com",
+                form_message_placeholder: "Tell us a bit about what you need.",
+                form_status_sending: "Sending your request...",
+                form_status_success: "Thanks. We received your request and will contact you soon.",
+                form_status_error: "Something went wrong. Please try again.",
                 footer_blurb: "Premium operations consulting and outsourcing solutions bridging DACH and US East Coast markets with Kosovo's high-tier talent.",
                 service_titles: ["Back-Office Operations", "Accounting & Finance", "Customer Support", "IT & Tech Support", "Web & Automation", "Lead Gen & Sales", "Real Estate Support"],
                 service_items: [
@@ -575,7 +601,6 @@
                 nav_about: "Warum Kosovo?",
                 nav_process: "So Funktioniert's",
                 nav_founders: "Ueber Uns",
-                cta_book: "Gespraech Buchen",
                 cta_schedule: "Termin Vereinbaren",
                 cta_contact: "Kontakt Aufnehmen",
                 hero_eyebrow: "Neu Gedachte Operations",
@@ -606,8 +631,19 @@
                 leaders_eyebrow: "Leadership",
                 leaders_title: "Strategische Fuehrung",
                 founder_role: "Gruender & CEO",
-                final_title: "Bereit, Ihre Ablaeufe zu skalieren?",
-                final_body: "Schliessen Sie sich den Unternehmen aus der DACH-Region und der US-Ostkueste an, die sich durch unser Delivery Center in Pristina einen Wettbewerbsvorteil sichern.",
+                final_title: "Termin Vereinbaren",
+                final_body: "Senden Sie uns Ihre Daten und wir melden uns bei Ihnen, um einen Termin zu vereinbaren.",
+                form_name_label: "Name",
+                form_email_label: "E-Mail",
+                form_message_label: "Nachricht",
+                form_helper: "Wir antworten Ihnen, um die beste Meeting-Zeit zu vereinbaren.",
+                form_submit: "Termin Vereinbaren",
+                form_name_placeholder: "Ihr Name",
+                form_email_placeholder: "sie@beispiel.de",
+                form_message_placeholder: "Teilen Sie uns kurz mit, wobei Sie Unterstuetzung brauchen.",
+                form_status_sending: "Ihre Anfrage wird gesendet...",
+                form_status_success: "Danke. Wir haben Ihre Anfrage erhalten und melden uns in Kuerze.",
+                form_status_error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
                 footer_blurb: "Premium-Loesungen fuer Operations Consulting und Outsourcing, die DACH- und US-East-Coast-Maerkte mit Kosovos Top-Talenten verbinden.",
                 service_titles: ["Backoffice-Operations", "Buchhaltung & Finanzen", "Kundensupport", "IT- & Tech-Support", "Web & Automatisierung", "Lead Gen & Vertrieb", "Immobilien-Support"],
                 service_items: [
@@ -742,8 +778,60 @@
             if (copyright) copyright.textContent = dict.footer_copyright;
             if (tagline) tagline.textContent = dict.footer_tagline;
 
+            const nameInput = document.querySelector("#schedule-name");
+            const emailInput = document.querySelector("#schedule-email");
+            const messageInput = document.querySelector("#schedule-message");
+            if (nameInput) nameInput.placeholder = dict.form_name_placeholder;
+            if (emailInput) emailInput.placeholder = dict.form_email_placeholder;
+            if (messageInput) messageInput.placeholder = dict.form_message_placeholder;
+
             document.querySelectorAll("[data-lang-switch]").forEach((button) => {
                 button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+            });
+        }
+
+        const scheduleForm = document.getElementById("schedule-form");
+        const scheduleStatus = document.getElementById("schedule-form-status");
+
+        if (scheduleForm && scheduleStatus) {
+            scheduleForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                const lang = document.documentElement.lang === "de" ? "de" : "en";
+                const dict = translations[lang] || translations.en;
+                const submitButton = scheduleForm.querySelector('button[type="submit"]');
+                const formData = new FormData(scheduleForm);
+                const payload = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    message: formData.get("message")
+                };
+
+                scheduleStatus.className = "text-sm font-medium text-on-surface-variant";
+                scheduleStatus.textContent = dict.form_status_sending;
+                scheduleStatus.classList.remove("hidden");
+                if (submitButton) submitButton.disabled = true;
+
+                try {
+                    const response = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Request failed");
+                    }
+
+                    scheduleForm.reset();
+                    scheduleStatus.className = "text-sm font-medium text-green-700";
+                    scheduleStatus.textContent = dict.form_status_success;
+                } catch (error) {
+                    scheduleStatus.className = "text-sm font-medium text-red-700";
+                    scheduleStatus.textContent = dict.form_status_error;
+                } finally {
+                    if (submitButton) submitButton.disabled = false;
+                }
             });
         }
 
