@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A&amp;E Consulting LLC | DACH &amp; US East Coast Operations</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#002147",
+              "surface-container": "#edeeef",
+              "primary-fixed-dim": "#aec7f6",
+              "surface-variant": "#e1e3e4",
+              "on-surface": "#191c1d",
+              "on-primary": "#ffffff",
+              "secondary": "#775a19",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#5d4201",
+              "on-tertiary-container": "#a68440",
+              "on-primary-fixed": "#001b3d",
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-tint": "#465f88",
+              "primary-fixed": "#d6e3ff",
+              "primary": "#000a1e",
+              "tertiary-fixed-dim": "#e9c176",
+              "outline-variant": "#c4c6cf",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary-container": "#785a1a",
+              "on-primary-container": "#708ab5",
+              "secondary-container": "#fed488",
+              "tertiary-container": "#2e1f00",
+              "surface-dim": "#d9dadb",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#f0f1f2",
+              "on-surface-variant": "#44474e",
+              "inverse-surface": "#2e3132",
+              "on-background": "#191c1d",
+              "on-primary-fixed-variant": "#2d476f",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#e9c176",
+              "inverse-primary": "#aec7f6",
+              "tertiary": "#110a00",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#ffdea5",
+              "background": "#f8f9fa",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "surface-bright": "#f8f9fa",
+              "on-secondary-fixed": "#261900",
+              "on-tertiary-fixed": "#261900",
+              "outline": "#74777f",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffdea5"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .serif-overlap {
+            text-shadow: 0 0 40px rgba(255,255,255,0.8);
+        }
+        .lang-toggle.active {
+            background: #000a1e;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-headline font-bold tracking-tighter text-blue-950 dark:text-white">
+                A&amp;E Consulting LLC
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-amber-500 pb-1 text-sm font-medium tracking-widest uppercase" data-i18n="nav_services" href="#services">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_about" href="#about">Why Kosovo?</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_process" href="#how-it-works">How It Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_founders" href="#founders">About Us</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center border border-outline-variant/50 rounded-full p-1 bg-white/90">
+<button class="lang-toggle active px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
+<button class="lang-toggle px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95" data-i18n="cta_book">
+                Book a Call
+            </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- HERO SECTION -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-15 grayscale" data-alt="Modern corporate office interior with floor-to-ceiling windows overlooking a twilight city skyline, soft cool lighting, premium architectural feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYMYHhXA5oGyyBQhGMPjdkNyH5JiTekMuGQrApCosj1TNC3jNEwCanyKIhVdVn7Mtrnnw5yfEKPu-JBWPO2JbdNVwLEGzhSXWdrowQP-_KTciArJuZCWVqwXp8NCY6j7-UUJo8Lyt22P6RWPX9PUMv59j-PxIZE_8sIvfNR2efWImwMB3yive1ZK5S7VDLSZLEDtG6xRBtAq3RJboXVaNvSqtRPFKiXMv2g-1lpzZISAhkAdYuPK0l5bOjyaaYltqDxK3vRD-3jryC"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8">
+<span class="inline-block text-secondary font-semibold tracking-[0.3em] uppercase text-xs mb-6" data-i18n="hero_eyebrow">Operations Reimagined</span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-primary leading-none tracking-tight mb-8">
+                        <span data-i18n="hero_line_1">Scale Your Operations</span> <br/>
+<span class="text-secondary italic font-normal" data-i18n="hero_emphasis">Without</span> <span data-i18n="hero_line_2">Scaling Costs</span>
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-12" data-i18n="hero_body">
+                        We help DACH-region and US East Coast companies outsource back-office operations, customer support, and IT services to a highly skilled, German- and English-speaking team in Kosovo.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-16">
+<button class="bg-primary text-on-primary px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-300" data-i18n="cta_book">
+                            Book a Call
+                        </button>
+<button class="bg-surface-container-lowest border border-outline-variant/30 text-primary px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300" data-i18n="cta_schedule">
+                            Schedule a Meeting
+                        </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">schedule</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant" data-i18n="hero_stat_1">CET Timezone</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">translate</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant" data-i18n="hero_stat_2">DE &amp; EN Team</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant" data-i18n="hero_stat_3">GDPR Compliant</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">gavel</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant" data-i18n="hero_stat_4">NDA Protected</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY KOSOVO (ABOUT) -->
+<section class="py-32 bg-surface-container-low" id="about">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block" data-i18n="about_eyebrow">Strategic Advantage</span>
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight" data-i18n="about_title">Why Kosovo?</h2>
+</div>
+<p class="text-on-surface-variant max-w-md italic border-l-2 border-secondary pl-6" data-i18n="about_intro">
+                        Leveraging Southeast Europe's emerging tech hub to provide premium talent for DACH and US East Coast companies at a fraction of standard costs.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_1_title">Zero Latency Partnership</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_latency">Operating in the same timezone as the DACH region and overlapping efficiently with the US East Coast, ensuring seamless real-time collaboration with your core teams.</p>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_2_title">Linguistic Excellence</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_language">Kosovo boasts an exceptionally high density of native-level German and English speakers, ideal for DACH-facing and US client communication.</p>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_3_title">Academic Powerhouse</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_card_3_body">A young, highly educated workforce with specialized degrees in Finance, IT, and Business Administration from international institutions.</p>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_4_title">Cost Efficiency</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_cost">Significantly lower operational costs compared to DACH and US markets, allowing for stronger margins without compromising on output quality.</p>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-headline font-bold text-primary" data-i18n="about_card_5_title">Rapid Scalability</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="about_card_5_body">Our deep local network allows us to onboard specialized talent in weeks, not months, matching your growth pace precisely.</p>
+</div>
+<div class="bg-primary p-8 flex flex-col justify-center items-center text-center">
+<div class="text-secondary text-4xl font-headline mb-2">40%</div>
+<div class="text-white text-[10px] tracking-widest uppercase font-bold" data-i18n="about_metric">Average Op-Ex Reduction</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="py-32 bg-white" id="services">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="text-center mb-24">
+<h2 class="text-5xl font-headline font-bold text-primary mb-6">Comprehensive Support Modules</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Modular services designed to integrate directly into your existing infrastructure.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
+<!-- S1 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">database</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Back-Office Operations</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Data Entry &amp; Cleanup</li>
+<li>• Document Management</li>
+<li>• CRM Administration</li>
+<li>• Digital Filing Systems</li>
+</ul>
+</div>
+<!-- S2 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">account_balance</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Accounting &amp; Finance</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Accounts Payable/Receivable</li>
+<li>• Invoice Processing</li>
+<li>• Monthly Reconciliation</li>
+<li>• Expense Tracking</li>
+</ul>
+</div>
+<!-- S3 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">support_agent</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Customer Support</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Multilingual Omni-channel</li>
+<li>• Zendesk/Intercom Experts</li>
+<li>• Customer Onboarding</li>
+<li>• Dispute Management</li>
+</ul>
+</div>
+<!-- S4 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">terminal</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">IT &amp; Tech Support</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Level 1/2 Helpdesk</li>
+<li>• SaaS Monitoring</li>
+<li>• Incident Reporting</li>
+<li>• Identity Management</li>
+</ul>
+</div>
+<!-- S5 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">code</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Web &amp; Automation</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Next.js / Webflow Dev</li>
+<li>• Zapier/Make Automations</li>
+<li>• SEO Maintenance</li>
+<li>• Landing Page Optimization</li>
+</ul>
+</div>
+<!-- S6 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">trending_up</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Lead Gen &amp; Sales</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Market Research</li>
+<li>• Outreach Campaigns</li>
+<li>• CRM Management</li>
+<li>• Sales Ops Support</li>
+</ul>
+</div>
+<!-- S7 -->
+<div class="bg-white p-10 group hover:bg-surface-container-low transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8 group-hover:scale-110 transition-transform">apartment</span>
+<h4 class="text-lg font-headline font-bold text-primary mb-4">Real Estate Support</h4>
+<ul class="text-xs space-y-3 text-on-surface-variant">
+<li>• Rent Roll Audits</li>
+<li>• Maintenance Tracking</li>
+<li>• Financial Reporting</li>
+<li>• Tenant Communication</li>
+</ul>
+</div>
+<!-- Contact Box -->
+<div class="bg-primary-container p-10 flex flex-col justify-center">
+<p class="text-on-primary-container text-sm font-medium mb-6">Need a custom solution?</p>
+<a class="text-secondary font-bold tracking-widest uppercase text-xs hover:underline inline-flex items-center gap-2" href="#">
+                            Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="py-32 bg-surface" id="how-it-works">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="grid lg:grid-cols-2 gap-24 items-start">
+<div>
+<span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block">Our Methodology</span>
+<h2 class="text-5xl font-headline font-bold text-primary mb-8">A Seamless Integration Process</h2>
+<p class="text-on-surface-variant mb-12">We don't just provide staff; we build extensions of your business culture and technical standards.</p>
+<div class="space-y-12">
+<div class="flex gap-8">
+<span class="text-4xl font-headline text-outline-variant font-light">01</span>
+<div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Define Needs</h4>
+<p class="text-sm text-on-surface-variant">In-depth consultation to map your current workflows and identify the exact skill sets required.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<span class="text-4xl font-headline text-outline-variant font-light">02</span>
+<div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Find &amp; Train</h4>
+<p class="text-sm text-on-surface-variant">We source candidates from our pre-vetted pool and provide custom training based on your internal tools.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<span class="text-4xl font-headline text-outline-variant font-light">03</span>
+<div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Interview</h4>
+<p class="text-sm text-on-surface-variant">You meet the top candidates to ensure a cultural and professional fit. You make the final call.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<span class="text-4xl font-headline text-outline-variant font-light">04</span>
+<div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Start &amp; Scale</h4>
+<p class="text-sm text-on-surface-variant">Ongoing management and quality assurance with the ability to scale the team overnight.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 border border-secondary/20 translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+<img class="w-full h-[600px] object-cover shadow-2xl" data-alt="Professional diverse team in a high-end bright office environment collaborating around a glass conference table with laptops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg0jObX6gS2kGr3jU7jpImBJ3d7kQI1pgMiYYggcMsNzJNEo5qMsva-Hyl4Oa5xegaEPtKJZo7TR4MkidRmnCVRJaMGNPp8sYrN3-na3Y0DIoR0M6Ok5Fs0nNK53AKl-GpD0sYFFzZeM33Qr7E4IrB2Mainq5-vzJJmAM5kIrzpQ_zJ0ugUxi4J5LCR5baNMKt4HEzfQFTzXA1_hN658GerM8p-D6Ch--iu5IjbFTfkL0NyCSb9VMs_sGs01C0oigMyQAYzcJwf0XR"/>
+</div>
+</div>
+</div>
+</section>
+<!-- VALUE PROPOSITION -->
+<section class="py-24 bg-primary text-white overflow-hidden relative">
+<div class="container mx-auto px-8 max-w-7xl relative z-10">
+<div class="grid md:grid-cols-4 gap-16">
+<div class="text-center">
+<div class="text-6xl font-headline font-bold text-secondary mb-4">40%</div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold" data-i18n="cost_label">Lower Operational Costs</p>
+</div>
+<div class="text-center">
+<div class="text-6xl font-headline font-bold text-secondary mb-4">0</div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Long-term Contracts</p>
+</div>
+<div class="text-center">
+<div class="text-6xl font-headline font-bold text-secondary mb-4">24h</div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Avg. Response Time</p>
+</div>
+<div class="text-center">
+<div class="text-6xl font-headline font-bold text-secondary mb-4">100%</div>
+<p class="text-[10px] tracking-[0.2em] uppercase text-on-primary-container font-bold">Scalability Rate</p>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary-container/5 -skew-x-12"></div>
+</section>
+<!-- FOUNDERS -->
+<section class="py-32 bg-white" id="founders">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="mb-20">
+<span class="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block" data-i18n="leaders_eyebrow">Leadership</span>
+<h2 class="text-5xl font-headline font-bold text-primary" data-i18n="leaders_title">Strategic Oversight</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-20">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<a class="block flex-shrink-0 w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low" href="https://www.linkedin.com/in/enes-haziri-2639bb270" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of Enes Haziri" src="./assets/enes-haziri.png"/>
+</a>
+<div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-1">Enes Haziri</h4>
+<p class="text-secondary text-xs tracking-widest uppercase font-bold mb-4" data-i18n="founder_role">Founder &amp; CEO</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">With a background in international business strategy, Enes bridges the gap between DACH operational standards and Kosovo's talent pool. Expert in high-growth organizational design.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<a class="block flex-shrink-0 w-64 h-80 overflow-hidden shadow-lg bg-surface-container-low" href="https://www.linkedin.com/in/ardittahiri/" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of Ardit Tahiri" src="./assets/ardit-tahiri.png"/>
+</a>
+<div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-1">Ardit Tahiri</h4>
+<p class="text-secondary text-xs tracking-widest uppercase font-bold mb-4">Co-Founder &amp; COO</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Ardit leads our on-the-ground operations in Pristina. With extensive experience in IT service delivery and US-market outsourcing, he ensures rigorous quality control across all verticals.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-8 max-w-4xl text-center">
+<h2 class="text-5xl font-headline font-bold text-primary mb-8 tracking-tight" data-i18n="final_title">Ready to scale your operations?</h2>
+<p class="text-lg text-on-surface-variant mb-12" data-i18n="final_body">Join the growing list of DACH and US East Coast firms gaining a competitive edge through our Pristina-based delivery center.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-12 py-5 text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all" data-i18n="cta_book">
+                        Book a Call
+                    </button>
+<button class="bg-white border border-outline-variant/50 text-primary px-12 py-5 text-sm font-bold tracking-widest uppercase hover:bg-surface-container transition-all" data-i18n="cta_contact">
+                        Get in Touch
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<div class="text-lg font-headline font-bold text-blue-950 dark:text-white mb-6">A&amp;E Consulting LLC</div>
+<p class="text-xs tracking-wide text-slate-500 leading-relaxed" data-i18n="footer_blurb">Premium operations consulting and outsourcing solutions bridging DACH and US East Coast markets with Kosovo's high-tier talent.</p>
+</div>
+<div>
+<h5 class="text-[10px] tracking-widest uppercase font-bold text-primary mb-6">Governance</h5>
+<div class="flex flex-col gap-3">
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="#">GDPR</a>
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div>
+<h5 class="text-[10px] tracking-widest uppercase font-bold text-primary mb-6">Network</h5>
+<div class="flex flex-col gap-3">
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="https://www.linkedin.com/in/enes-haziri-2639bb270" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="#">Advisory Board</a>
+<a class="text-xs text-slate-500 hover:text-amber-600 transition-colors" href="#">Career Portal</a>
+</div>
+</div>
+<div>
+<h5 class="text-[10px] tracking-widest uppercase font-bold text-primary mb-6">Office</h5>
+<p class="text-xs text-slate-500 leading-loose">
+                    Pristina, Kosovo<br/>
+                    enes@aeconsultingllc.de
+                </p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[10px] tracking-wide text-slate-400">© 2024 A&amp;E Consulting LLC. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-secondary tracking-widest uppercase">Elite Reliability</span>
+</div>
+</div>
+</footer>
+<script>
+        const translations = {
+            en: {
+                nav_services: "Services",
+                nav_about: "Why Kosovo?",
+                nav_process: "How It Works",
+                nav_founders: "About Us",
+                cta_book: "Book a Call",
+                cta_schedule: "Schedule a Meeting",
+                cta_contact: "Get in Touch",
+                hero_eyebrow: "Operations Reimagined",
+                hero_line_1: "Scale Your Operations",
+                hero_emphasis: "Without",
+                hero_line_2: "Scaling Costs",
+                hero_body: "We help DACH-region and US East Coast companies outsource back-office operations, customer support, and IT services to a highly skilled, German- and English-speaking team in Kosovo.",
+                hero_stat_1: "CET Timezone",
+                hero_stat_2: "DE & EN Team",
+                hero_stat_3: "GDPR Compliant",
+                hero_stat_4: "NDA Protected",
+                about_eyebrow: "Strategic Advantage",
+                about_title: "Why Kosovo?",
+                about_intro: "Leveraging Southeast Europe's emerging tech hub to provide premium talent for DACH and US East Coast companies at a fraction of standard costs.",
+                about_card_1_title: "Zero Latency Partnership",
+                about_latency: "Operating in the same timezone as the DACH region and overlapping efficiently with the US East Coast, ensuring seamless real-time collaboration with your core teams.",
+                about_card_2_title: "Linguistic Excellence",
+                about_language: "Kosovo boasts an exceptionally high density of native-level German and English speakers, ideal for DACH-facing and US client communication.",
+                about_card_3_title: "Academic Powerhouse",
+                about_card_3_body: "A young, highly educated workforce with specialized degrees in Finance, IT, and Business Administration from international institutions.",
+                about_card_4_title: "Cost Efficiency",
+                about_cost: "Significantly lower operational costs compared to DACH and US markets, allowing for stronger margins without compromising on output quality.",
+                about_card_5_title: "Rapid Scalability",
+                about_card_5_body: "Our deep local network allows us to onboard specialized talent in weeks, not months, matching your growth pace precisely.",
+                about_metric: "Average Op-Ex Reduction",
+                cost_label: "Lower Operational Costs",
+                quote_author: "DACH Fintech",
+                leaders_eyebrow: "Leadership",
+                leaders_title: "Strategic Oversight",
+                founder_role: "Founder & CEO",
+                final_title: "Ready to scale your operations?",
+                final_body: "Join the growing list of DACH and US East Coast firms gaining a competitive edge through our Pristina-based delivery center.",
+                footer_blurb: "Premium operations consulting and outsourcing solutions bridging DACH and US East Coast markets with Kosovo's high-tier talent.",
+                service_titles: ["Back-Office Operations", "Accounting & Finance", "Customer Support", "IT & Tech Support", "Web & Automation", "Lead Gen & Sales", "Real Estate Support"],
+                service_items: [
+                    ["Data Entry & Cleanup", "Document Management", "CRM Administration", "Digital Filing Systems"],
+                    ["Accounts Payable/Receivable", "Invoice Processing", "Monthly Reconciliation", "Expense Tracking"],
+                    ["Multilingual Omni-channel", "Zendesk/Intercom Experts", "Customer Onboarding", "Dispute Management"],
+                    ["Level 1/2 Helpdesk", "SaaS Monitoring", "Incident Reporting", "Identity Management"],
+                    ["Next.js / Webflow Dev", "Zapier/Make Automations", "SEO Maintenance", "Landing Page Optimization"],
+                    ["Market Research", "Outreach Campaigns", "CRM Management", "Sales Ops Support"],
+                    ["Rent Roll Audits", "Maintenance Tracking", "Financial Reporting", "Tenant Communication"]
+                ],
+                services_title: "Comprehensive Support Modules",
+                services_intro: "Modular services designed to integrate directly into your existing infrastructure.",
+                services_cta_text: "Need a custom solution?",
+                services_cta_link: "Inquire Now",
+                process_eyebrow: "Our Methodology",
+                process_title: "A Seamless Integration Process",
+                process_intro: "We don't just provide staff; we build extensions of your business culture and technical standards.",
+                process_steps: [
+                    ["Define Needs", "In-depth consultation to map your current workflows and identify the exact skill sets required."],
+                    ["Find & Train", "We source candidates from our pre-vetted pool and provide custom training based on your internal tools."],
+                    ["Interview", "You meet the top candidates to ensure a cultural and professional fit. You make the final call."],
+                    ["Start & Scale", "Ongoing management and quality assurance with the ability to scale the team overnight."]
+                ],
+                stat_labels: ["Lower Operational Costs", "Long-term Contracts", "Avg. Response Time", "Scalability Rate"],
+                founder_1_body: "With a background in international business strategy, Enes bridges the gap between DACH operational standards and Kosovo's talent pool. Expert in high-growth organizational design.",
+                founder_2_role: "Co-Founder & COO",
+                founder_2_body: "Ardit leads our on-the-ground operations in Pristina. With extensive experience in IT service delivery and US-market outsourcing, he ensures rigorous quality control across all verticals.",
+                footer_labels: ["Governance", "Network", "Office"],
+                footer_links: ["GDPR", "Privacy Policy", "Terms of Service", "LinkedIn", "Advisory Board", "Career Portal"],
+                footer_location: "Pristina, Kosovo",
+                footer_copyright: "© 2024 A&E Consulting LLC. All rights reserved.",
+                footer_tagline: "Elite Reliability"
+            },
+            de: {
+                nav_services: "Leistungen",
+                nav_about: "Warum Kosovo?",
+                nav_process: "So Funktioniert's",
+                nav_founders: "Ueber Uns",
+                cta_book: "Gespraech Buchen",
+                cta_schedule: "Termin Vereinbaren",
+                cta_contact: "Kontakt Aufnehmen",
+                hero_eyebrow: "Neu Gedachte Operations",
+                hero_line_1: "Skalieren Sie Ihre Ablaeufe",
+                hero_emphasis: "Ohne",
+                hero_line_2: "Ihre Kosten mitzuskalieren",
+                hero_body: "Wir helfen Unternehmen aus der DACH-Region und der US-Ostkueste, Backoffice-Prozesse, Customer Support und IT-Services an ein hochqualifiziertes, deutsch- und englischsprachiges Team im Kosovo auszulagern.",
+                hero_stat_1: "CET Zeitzone",
+                hero_stat_2: "DE- & EN-Team",
+                hero_stat_3: "DSGVO-Konform",
+                hero_stat_4: "NDA-Geschuetzt",
+                about_eyebrow: "Strategischer Vorteil",
+                about_title: "Warum Kosovo?",
+                about_intro: "Wir nutzen Suedosteuropas aufstrebenden Tech-Standort, um DACH- und US-East-Coast-Unternehmen erstklassige Talente zu deutlich geringeren Kosten bereitzustellen.",
+                about_card_1_title: "Nahtlose Zusammenarbeit",
+                about_latency: "Wir arbeiten in derselben Zeitzone wie die DACH-Region und mit guter Ueberschneidung zur US-Ostkueste, damit Ihre Teams in Echtzeit zusammenarbeiten koennen.",
+                about_card_2_title: "Sprachliche Exzellenz",
+                about_language: "Kosovo verfuegt ueber eine aussergewoehnlich hohe Dichte an deutsch- und englischsprachigen Fachkraeften, ideal fuer die Kommunikation mit DACH- und US-Kunden.",
+                about_card_3_title: "Akademische Staerke",
+                about_card_3_body: "Eine junge, hervorragend ausgebildete Workforce mit Spezialisierungen in Finanzen, IT und Betriebswirtschaft von internationalen Hochschulen.",
+                about_card_4_title: "Kosteneffizienz",
+                about_cost: "Deutlich niedrigere Betriebskosten als in DACH- und US-Maerkten, wodurch bessere Margen ohne Qualitaetsverlust moeglich werden.",
+                about_card_5_title: "Schnelle Skalierung",
+                about_card_5_body: "Unser starkes lokales Netzwerk ermoeglicht es uns, spezialisierte Talente in Wochen statt Monaten bereitzustellen.",
+                about_metric: "Durchschnittliche Opex-Reduktion",
+                cost_label: "Niedrigere Betriebskosten",
+                quote_author: "DACH-Fintech",
+                leaders_eyebrow: "Leadership",
+                leaders_title: "Strategische Fuehrung",
+                founder_role: "Gruender & CEO",
+                final_title: "Bereit, Ihre Ablaeufe zu skalieren?",
+                final_body: "Schliessen Sie sich den Unternehmen aus der DACH-Region und der US-Ostkueste an, die sich durch unser Delivery Center in Pristina einen Wettbewerbsvorteil sichern.",
+                footer_blurb: "Premium-Loesungen fuer Operations Consulting und Outsourcing, die DACH- und US-East-Coast-Maerkte mit Kosovos Top-Talenten verbinden.",
+                service_titles: ["Backoffice-Operations", "Buchhaltung & Finanzen", "Kundensupport", "IT- & Tech-Support", "Web & Automatisierung", "Lead Gen & Vertrieb", "Immobilien-Support"],
+                service_items: [
+                    ["Datenerfassung & Bereinigung", "Dokumentenmanagement", "CRM-Administration", "Digitale Ablagesysteme"],
+                    ["Kreditoren & Debitoren", "Rechnungsverarbeitung", "Monatliche Abstimmungen", "Kostenverfolgung"],
+                    ["Mehrsprachiger Omnichannel-Support", "Zendesk-/Intercom-Experten", "Kunden-Onboarding", "Beschwerdemanagement"],
+                    ["Level-1/2-Helpdesk", "SaaS-Monitoring", "Incident-Reporting", "Identity Management"],
+                    ["Next.js / Webflow Entwicklung", "Zapier-/Make-Automationen", "SEO-Betreuung", "Landingpage-Optimierung"],
+                    ["Marktrecherche", "Outreach-Kampagnen", "CRM-Management", "Vertriebsunterstuetzung"],
+                    ["Rent-Roll-Pruefungen", "Instandhaltungs-Tracking", "Finanzreporting", "Mieterkommunikation"]
+                ],
+                services_title: "Umfassende Support-Module",
+                services_intro: "Modulare Services, die sich direkt in Ihre bestehende Infrastruktur integrieren.",
+                services_cta_text: "Benoetigen Sie eine individuelle Loesung?",
+                services_cta_link: "Jetzt anfragen",
+                process_eyebrow: "Unsere Methodik",
+                process_title: "Ein nahtloser Integrationsprozess",
+                process_intro: "Wir stellen nicht nur Personal bereit, sondern bauen eine Erweiterung Ihrer Unternehmenskultur und technischen Standards auf.",
+                process_steps: [
+                    ["Bedarf definieren", "In einer detaillierten Beratung analysieren wir Ihre Ablaeufe und identifizieren die exakten benoetigten Kompetenzprofile."],
+                    ["Finden & Schulen", "Wir identifizieren Kandidaten aus unserem vorqualifizierten Pool und schulen sie auf Ihre internen Tools und Prozesse."],
+                    ["Interviews", "Sie lernen die besten Kandidaten kennen und treffen die finale Auswahl nach kultureller und fachlicher Passung."],
+                    ["Start & Skalierung", "Kontinuierliches Management und Qualitaetssicherung mit der Moeglichkeit, Ihr Team kurzfristig zu erweitern."]
+                ],
+                stat_labels: ["Niedrigere Betriebskosten", "Langfristige Vertraege", "Ø Reaktionszeit", "Skalierbarkeit"],
+                founder_1_body: "Mit seinem Hintergrund in internationaler Geschaeftsstrategie verbindet Enes die operativen Standards der DACH-Region mit dem Talentpool des Kosovo. Spezialist fuer wachstumsstarke Organisationsstrukturen.",
+                founder_2_role: "Co-Gruender & COO",
+                founder_2_body: "Ardit leitet unsere operativen Teams in Pristina. Mit umfassender Erfahrung in IT-Service-Delivery und Outsourcing fuer den US-Markt sichert er konsequente Qualitaetsstandards in allen Bereichen.",
+                footer_labels: ["Rechtliches", "Netzwerk", "Standort"],
+                footer_links: ["DSGVO", "Datenschutz", "AGB", "LinkedIn", "Beirat", "Karriereportal"],
+                footer_location: "Pristina, Kosovo",
+                footer_copyright: "© 2024 A&E Consulting LLC. Alle Rechte vorbehalten.",
+                footer_tagline: "Zuverlaessigkeit auf hoechstem Niveau"
+            }
+        };
+
+        function applyLanguage(lang) {
+            const dict = translations[lang] || translations.en;
+            document.documentElement.lang = lang;
+            document.title = lang === "de"
+                ? "A&E Consulting LLC | DACH- & US-East-Coast-Operations"
+                : "A&E Consulting LLC | DACH & US East Coast Operations";
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.getAttribute("data-i18n");
+                if (dict[key]) {
+                    element.textContent = dict[key];
+                }
+            });
+
+            const serviceCards = document.querySelectorAll("#services .group");
+            serviceCards.forEach((card, index) => {
+                const heading = card.querySelector("h4");
+                const items = card.querySelectorAll("li");
+                if (heading && dict.service_titles && dict.service_titles[index]) {
+                    heading.textContent = dict.service_titles[index];
+                }
+                if (dict.service_items && dict.service_items[index]) {
+                    items.forEach((item, itemIndex) => {
+                        if (dict.service_items[index][itemIndex]) {
+                            item.textContent = dict.service_items[index][itemIndex];
+                        }
+                    });
+                }
+            });
+
+            const servicesHeading = document.querySelector("#services .text-center h2");
+            const servicesIntro = document.querySelector("#services .text-center p");
+            const servicesCtaText = document.querySelector("#services .bg-primary-container p");
+            const servicesCtaLink = document.querySelector("#services .bg-primary-container a span:first-child");
+            if (servicesHeading) servicesHeading.textContent = dict.services_title;
+            if (servicesIntro) servicesIntro.textContent = dict.services_intro;
+            if (servicesCtaText) servicesCtaText.textContent = dict.services_cta_text;
+            if (servicesCtaLink) servicesCtaLink.textContent = dict.services_cta_link;
+
+            const processRoot = document.querySelector("#how-it-works");
+            if (processRoot) {
+                const eyebrow = processRoot.querySelector("span");
+                const title = processRoot.querySelector("h2");
+                const intro = processRoot.querySelector("p");
+                if (eyebrow) eyebrow.textContent = dict.process_eyebrow;
+                if (title) title.textContent = dict.process_title;
+                if (intro) intro.textContent = dict.process_intro;
+                const steps = processRoot.querySelectorAll(".space-y-12 > div");
+                steps.forEach((step, index) => {
+                    const stepTitle = step.querySelector("h4");
+                    const stepBody = step.querySelector("p");
+                    if (dict.process_steps && dict.process_steps[index]) {
+                        if (stepTitle) stepTitle.textContent = dict.process_steps[index][0];
+                        if (stepBody) stepBody.textContent = dict.process_steps[index][1];
+                    }
+                });
+            }
+
+            const stats = document.querySelectorAll(".py-24.bg-primary .text-center p");
+            stats.forEach((item, index) => {
+                if (dict.stat_labels && dict.stat_labels[index]) {
+                    item.textContent = dict.stat_labels[index];
+                }
+            });
+
+            const founderBodies = document.querySelectorAll("#founders .text-sm.text-on-surface-variant.leading-relaxed");
+            if (founderBodies[0]) founderBodies[0].textContent = dict.founder_1_body;
+            if (founderBodies[1]) founderBodies[1].textContent = dict.founder_2_body;
+            const founderRoles = document.querySelectorAll("#founders .text-secondary.text-xs.tracking-widest.uppercase.font-bold.mb-4");
+            if (founderRoles[0]) founderRoles[0].textContent = dict.founder_role;
+            if (founderRoles[1]) founderRoles[1].textContent = dict.founder_2_role;
+
+            const footerHeadings = document.querySelectorAll("footer h5");
+            footerHeadings.forEach((item, index) => {
+                if (dict.footer_labels && dict.footer_labels[index]) {
+                    item.textContent = dict.footer_labels[index];
+                }
+            });
+            const footerLinks = document.querySelectorAll("footer a.text-xs");
+            footerLinks.forEach((item, index) => {
+                if (dict.footer_links && dict.footer_links[index]) {
+                    item.textContent = dict.footer_links[index];
+                }
+            });
+            const officeParagraph = document.querySelector("footer .text-xs.text-slate-500.leading-loose");
+            if (officeParagraph) {
+                officeParagraph.innerHTML = `${dict.footer_location}<br>enes@aeconsultingllc.de`;
+            }
+            const copyright = document.querySelector("footer .text-[10px].tracking-wide.text-slate-400");
+            const tagline = document.querySelector("footer .text-[10px].font-bold.text-secondary.tracking-widest.uppercase");
+            if (copyright) copyright.textContent = dict.footer_copyright;
+            if (tagline) tagline.textContent = dict.footer_tagline;
+
+            document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+                button.classList.toggle("active", button.getAttribute("data-lang-switch") === lang);
+            });
+        }
+
+        document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+            button.addEventListener("click", () => applyLanguage(button.getAttribute("data-lang-switch")));
+        });
+
+        applyLanguage("en");
+    </script>
+</body></html>
+
+
