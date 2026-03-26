@@ -77,6 +77,31 @@
       }
     </script>
 <style>
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            position: relative;
+            min-height: 100vh;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        main, nav, section, footer {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+        img, video, canvas, svg, iframe {
+            max-width: 100%;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
@@ -93,8 +118,8 @@
 <body class="bg-surface font-body text-on-surface antialiased">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-7xl mx-auto gap-3">
-<div class="text-base sm:text-xl font-headline font-bold tracking-tighter text-blue-950 dark:text-white">
+<div class="flex justify-between items-center w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-7xl mx-auto gap-3 flex-nowrap min-w-0">
+<div class="min-w-0 flex-1 pr-2 text-sm sm:text-xl leading-tight font-headline font-bold tracking-tighter text-blue-950 dark:text-white">
                 A<span class="text-secondary px-0.5">&amp;</span>E Consulting LLC
             </div>
 <div class="hidden md:flex items-center gap-10">
@@ -103,12 +128,12 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_process" href="#how-it-works">How It Works</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors text-sm font-medium tracking-widest uppercase" data-i18n="nav_founders" href="#founders">About Us</a>
 </div>
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 shrink-0">
 <div class="hidden sm:flex items-center border border-outline-variant/50 rounded-full p-1 bg-white/90">
 <button class="lang-toggle active px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
 <button class="lang-toggle px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
-<button class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95" data-i18n="cta_book">
+<button class="bg-primary text-on-primary px-3 sm:px-6 py-2 sm:py-2.5 text-[10px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-widest uppercase hover:bg-secondary transition-all duration-300 active:scale-95 whitespace-nowrap" data-i18n="cta_book">
                 Book a Call
             </button>
 </div>
