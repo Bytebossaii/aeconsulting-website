@@ -121,21 +121,18 @@
             flex-shrink: 0;
             isolation: isolate;
         }
-        .lang-toggle-group::before {
-            content: '';
+        .lang-toggle-indicator {
             position: absolute;
             top: 0.125rem;
             bottom: 0.125rem;
             left: 0.125rem;
-            width: calc(50% - 0.125rem);
+            width: 0;
             border-radius: 9999px;
             background: #000a1e;
             box-shadow: 0 8px 20px rgba(0, 10, 30, 0.18);
-            transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+            transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+                        width 320ms cubic-bezier(0.22, 1, 0.36, 1);
             z-index: 0;
-        }
-        .lang-toggle-group[data-active-lang='de']::before {
-            transform: translateX(100%);
         }
         .lang-toggle {
             position: relative;
@@ -184,6 +181,7 @@
 </div>
 <div class="mobile-header-actions flex items-center gap-3 shrink-0">
 <div class="lang-toggle-group" data-active-lang="en">
+<span aria-hidden="true" class="lang-toggle-indicator"></span>
 <button class="lang-toggle lang-toggle-mobile active px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="en" type="button">EN</button>
 <button class="lang-toggle lang-toggle-mobile px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.14em] sm:tracking-widest uppercase rounded-full transition-all" data-lang-switch="de" type="button">DE</button>
 </div>
@@ -717,6 +715,19 @@
             }
         };
 
+        function syncLanguageToggleIndicator() {
+            document.querySelectorAll(".lang-toggle-group").forEach((group) => {
+                const activeButton = group.querySelector(".lang-toggle.active");
+                const indicator = group.querySelector(".lang-toggle-indicator");
+                if (!activeButton || !indicator) return;
+
+                const x = activeButton.offsetLeft - 2;
+                const width = activeButton.offsetWidth;
+                indicator.style.width = `${width}px`;
+                indicator.style.transform = `translateX(${x}px)`;
+            });
+        }
+
         function applyLanguage(lang) {
             const dict = translations[lang] || translations.en;
             document.documentElement.lang = lang;
@@ -830,6 +841,7 @@
             document.querySelectorAll(".lang-toggle-group").forEach((group) => {
                 group.setAttribute("data-active-lang", lang);
             });
+            syncLanguageToggleIndicator();
         }
 
         const scheduleForm = document.getElementById("schedule-form");
@@ -880,6 +892,8 @@
         document.querySelectorAll("[data-lang-switch]").forEach((button) => {
             button.addEventListener("click", () => applyLanguage(button.getAttribute("data-lang-switch")));
         });
+
+        window.addEventListener("resize", syncLanguageToggleIndicator);
 
         let initialLanguage = "en";
         try {
