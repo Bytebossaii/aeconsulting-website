@@ -13,6 +13,21 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/gdpr.html",
+        destination: "/gdpr",
+        permanent: true,
+      },
+      {
+        source: "/privacy-policy.html",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service.html",
+        destination: "/terms-of-service",
+        permanent: true,
+      },
     ]
   },
   async rewrites() {
@@ -21,6 +36,18 @@ const nextConfig = {
         {
           source: "/",
           destination: "/code.html",
+        },
+        {
+          source: "/gdpr",
+          destination: "/gdpr.html",
+        },
+        {
+          source: "/privacy-policy",
+          destination: "/privacy-policy.html",
+        },
+        {
+          source: "/terms-of-service",
+          destination: "/terms-of-service.html",
         },
       ],
     }
