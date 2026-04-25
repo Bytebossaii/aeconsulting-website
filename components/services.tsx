@@ -11,16 +11,16 @@ export function Services() {
       num: "01",
       title: t("Mietbuchhaltung", "Rent Accounting"),
       desc: t(
-        "Komplette Mietbuchhaltung inklusive Sollstellung, Zahlungseingänge und Kontenabstimmung.",
-        "Complete rent accounting including charges, payment receipts, and account reconciliation."
+        "Vorbereitung und Pflege von Sollstellungen, Zahlungseingängen, Kontenabstimmungen und offenen Posten nach Ihrem Freigabeprozess.",
+        "Preparation and maintenance of charges, payment receipts, reconciliations, and open items under your approval workflow."
       ),
     },
     {
       num: "02",
       title: t("Nebenkostenabrechnung", "Utility Billing"),
       desc: t(
-        "Erstellung der jährlichen Betriebskostenabrechnung nach aktueller Rechtslage.",
-        "Preparation of annual utility billing in compliance with current regulations."
+        "Strukturierte Zuarbeit für jährliche Betriebskostenabrechnungen, Belegpflege, Plausibilitätschecks und Eigentümerunterlagen.",
+        "Structured support for annual utility billing, document handling, plausibility checks, and owner documentation."
       ),
     },
     {
@@ -68,16 +68,22 @@ export function Services() {
             <h2 className="font-serif text-4xl font-bold text-cream md:text-5xl text-balance">
               {t("Was wir für Sie übernehmen", "What We Handle for You")}
             </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-cream/55">
+              {t(
+                "Sie behalten Kontrolle und Freigaben. Wir übernehmen die wiederkehrenden Aufgaben, die Ihr Team jeden Tag Zeit kosten.",
+                "You keep control and approvals. We take over the recurring work that costs your team time every day."
+              )}
+            </p>
           </div>
         </ScrollReveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
-            <ScrollReveal key={i} delay={i * 80}>
-              <div className="group rounded-sm border border-white/[0.06] bg-white/[0.03] p-7 transition-all hover:border-gold/20 hover:bg-white/[0.06]">
+            <ScrollReveal key={service.num} delay={i * 80}>
+              <div className="group min-h-64 rounded-sm border border-white/[0.06] bg-white/[0.03] p-7 transition-all hover:border-gold/20 hover:bg-white/[0.06]">
                 <span className="font-serif text-3xl font-bold text-gold/40">{service.num}</span>
                 <h3 className="mt-4 text-lg font-semibold text-cream">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream/50">{service.desc}</p>
+                <p className="mt-3 text-sm leading-relaxed text-cream/55">{service.desc}</p>
               </div>
             </ScrollReveal>
           ))}

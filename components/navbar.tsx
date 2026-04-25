@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { LanguageToggle } from "@/components/language-toggle"
 import { Menu, X } from "lucide-react"
@@ -18,8 +18,9 @@ export function Navbar() {
 
   const navLinks = [
     { href: "#services", label: t("Leistungen", "Services") },
-    { href: "#how-it-works", label: t("So funktioniert es", "How It Works") },
-    { href: "#about", label: t("Über uns", "About Us") },
+    { href: "#how-it-works", label: t("Prozess", "Process") },
+    { href: "#about", label: t("Über uns", "About") },
+    { href: "#faq", label: "FAQ" },
   ]
 
   return (
@@ -29,12 +30,10 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="#" className="font-serif text-2xl font-bold text-cream tracking-wide">
+        <a href="#" className="font-serif text-2xl font-bold tracking-wide text-cream">
           A<span className="text-gold">&</span>E Consulting
         </a>
 
-        {/* Desktop nav links */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
@@ -47,7 +46,6 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Right side */}
         <div className="flex items-center gap-4">
           <LanguageToggle />
           <a
@@ -56,18 +54,17 @@ export function Navbar() {
           >
             {t("Gespräch vereinbaren", "Book a Call")}
           </a>
-          {/* Mobile hamburger */}
           <button
             className="text-cream md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-white/10 bg-navy px-6 pb-6 pt-4 md:hidden">
           {navLinks.map((link) => (

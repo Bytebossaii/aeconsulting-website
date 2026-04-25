@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Clock, MessageSquare, Globe, Shield, Linkedin } from "lucide-react"
+import { Clock, Globe, MessageSquare, Shield } from "lucide-react"
 
 export function About() {
   const { t } = useLanguage()
@@ -10,34 +10,34 @@ export function About() {
   const advantages = [
     {
       icon: Clock,
-      title: t("Zeitzone CET", "CET Timezone"),
+      title: t("CET-Zeitzone", "CET Timezone"),
       desc: t(
-        "Pristina liegt in der gleichen Zeitzone wie Berlin, Wien und Zürich -- volle Erreichbarkeit während der Geschäftszeiten.",
-        "Pristina is in the same timezone as Berlin, Vienna, and Zurich -- full availability during business hours."
+        "Pristina liegt in der gleichen Arbeitszeitzone wie Berlin, Wien und Zürich. Ihr ausgelagertes Team ist erreichbar, wenn Ihre Verwaltung arbeitet.",
+        "Pristina works in the same business timezone as Berlin, Vienna, and Zurich. Your outsourced team is available when your office is working."
       ),
     },
     {
       icon: MessageSquare,
-      title: t("Deutschsprachiges Team", "German-Speaking Staff"),
+      title: t("Deutschsprachige Abläufe", "German-Speaking Workflows"),
       desc: t(
-        "Unser Team spricht fließend Deutsch und Englisch -- keinerlei Sprachbarrieren.",
-        "Our team is fluent in German and English -- no language barriers whatsoever."
+        "Kommunikation, Vorlagen, Tickets und Dokumentation laufen auf Deutsch und Englisch, damit Übergaben sauber bleiben.",
+        "Communication, templates, tickets, and documentation run in German and English, keeping handoffs clear."
       ),
     },
     {
       icon: Globe,
-      title: t("EU-Beitrittskandidat", "EU Accession Candidate"),
+      title: t("Nähe statt anonymer Offshore-Struktur", "Nearshore, Not Anonymous Offshore"),
       desc: t(
-        "Kosovo ist offizieller EU-Beitrittskandidat mit wachsender IT- und Dienstleistungsbranche.",
-        "Kosovo is an official EU accession candidate with a growing IT and service sector."
+        "Kosovo verbindet wettbewerbsfähige Kosten mit europäischer Arbeitskultur, kurzen Wegen und hoher Serviceorientierung.",
+        "Kosovo combines competitive costs with European work culture, short communication paths, and strong service orientation."
       ),
     },
     {
       icon: Shield,
-      title: t("DSGVO-konform", "GDPR Compliant"),
+      title: t("Datenschutz & Zugriffsdisziplin", "Data Protection & Access Discipline"),
       desc: t(
-        "Alle Prozesse entsprechen den Anforderungen der DSGVO -- Ihre Daten sind sicher.",
-        "All processes comply with GDPR requirements -- your data is safe."
+        "Wir arbeiten mit rollenbasierten Zugängen, dokumentierten Prozessen und klaren Freigaben für sensible Immobilien- und Mieterdaten.",
+        "We work with role-based access, documented processes, and clear approvals for sensitive property and tenant data."
       ),
     },
   ]
@@ -47,15 +47,14 @@ export function About() {
     { label: t("Standort", "Location"), value: "Pristina, Kosovo" },
     { label: t("Märkte", "Markets"), value: "DACH & US East Coast" },
     { label: t("Sprachen", "Languages"), value: t("Deutsch, Englisch", "German, English") },
-    { label: t("Zeitzone", "Timezone"), value: "CET (UTC+1)" },
-    { label: t("Mindestvertrag", "Min. Contract"), value: t("Keiner", "None") },
+    { label: t("Zeitzone", "Timezone"), value: "CET" },
+    { label: t("Startmodell", "Start Model"), value: t("Pilotfähig", "Pilot-ready") },
   ]
 
   return (
     <section id="about" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-2">
-          {/* Left: content */}
           <div>
             <ScrollReveal>
               <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
@@ -68,7 +67,7 @@ export function About() {
 
             <div className="mt-10 flex flex-col gap-6">
               {advantages.map((adv, i) => (
-                <ScrollReveal key={i} delay={i * 100}>
+                <ScrollReveal key={adv.title} delay={i * 100}>
                   <div className="flex items-start gap-5">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-navy">
                       <adv.icon className="h-5 w-5 text-gold" />
@@ -83,38 +82,42 @@ export function About() {
             </div>
           </div>
 
-          {/* Right: profile card */}
           <ScrollReveal delay={200}>
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-sm bg-navy p-8 lg:p-10">
-                <div className="mb-8">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
-                    <span className="font-serif text-2xl font-bold text-gold">EH</span>
+              <div className="overflow-hidden rounded-sm bg-navy">
+                <div className="grid gap-0 sm:grid-cols-[0.9fr_1.1fr]">
+                  <div className="min-h-80 bg-navy-light">
+                    <img
+                      src="/assets/enes-haziri.png"
+                      alt="Enes Haziri, Founder and Managing Director of A&E Consulting"
+                      className="h-full w-full object-cover object-top"
+                    />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-cream">Enes Haziri</h3>
-                  <p className="mt-1 text-sm text-gold">
-                    {t("Gründer & Geschäftsführer", "Founder & Managing Director")}
-                  </p>
-                </div>
-
-                <div className="border-t border-white/10">
-                  {profileStats.map((stat, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between border-b border-white/10 py-3.5"
-                    >
-                      <span className="text-sm text-cream/50">{stat.label}</span>
-                      <span className="text-sm font-medium text-cream">{stat.value}</span>
+                  <div className="p-8 lg:p-10">
+                    <div className="mb-8">
+                      <h3 className="font-serif text-2xl font-bold text-cream">Enes Haziri</h3>
+                      <p className="mt-1 text-sm text-gold">
+                        {t("Gründer & Geschäftsführer", "Founder & Managing Director")}
+                      </p>
                     </div>
-                  ))}
-                </div>
 
-                <a
-                  href="#contact"
-                  className="mt-8 block rounded-sm bg-gold px-6 py-3 text-center text-sm font-semibold text-navy transition-all hover:bg-gold-light"
-                >
-                  {t("Kontakt aufnehmen", "Get in Touch")}
-                </a>
+                    <div className="border-t border-white/10">
+                      {profileStats.map((stat) => (
+                        <div key={stat.label} className="flex items-center justify-between gap-5 border-b border-white/10 py-3.5">
+                          <span className="text-sm text-cream/50">{stat.label}</span>
+                          <span className="text-right text-sm font-medium text-cream">{stat.value}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href="#contact"
+                      className="mt-8 block rounded-sm bg-gold px-6 py-3 text-center text-sm font-semibold text-navy transition-all hover:bg-gold-light"
+                    >
+                      {t("Kontakt aufnehmen", "Get in Touch")}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollReveal>

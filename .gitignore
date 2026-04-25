@@ -9,3 +9,6 @@ node_modules/
 .env*.local
 .DS_Store
 .vercel
+tsconfig.tsbuildinfo
+.next-dev*.log
+.next-start*.log

@@ -3,52 +3,52 @@
 import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Plus, X } from "lucide-react"
+import { Plus } from "lucide-react"
 
 export function FAQ() {
   const { t } = useLanguage()
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const items = [
     {
       q: t("In welcher Sprache wird gearbeitet?", "What language do you work in?"),
       a: t(
-        "Unser Team arbeitet fließend in Deutsch und Englisch. Die gesamte Kommunikation, Dokumentation und Korrespondenz erfolgt in der Sprache Ihrer Wahl.",
-        "Our team works fluently in German and English. All communication, documentation, and correspondence is conducted in the language of your choice."
+        "Unser Team arbeitet in Deutsch und Englisch. Kommunikation, Dokumentation, E-Mail-Vorlagen und operative Übergaben werden an Ihre Sprache und Ihren Ton angepasst.",
+        "Our team works in German and English. Communication, documentation, email templates, and operational handoffs are adapted to your language and tone."
       ),
     },
     {
       q: t("Welche Software wird verwendet?", "What software do you use?"),
       a: t(
-        "Wir arbeiten mit den gängigsten Hausverwaltungs-Programmen wie DATEV, Domus, Wodis, Haufe PowerHaus und GFAD. Sollten Sie ein anderes System nutzen, passen wir uns an.",
-        "We work with the most common property management software such as DATEV, Domus, Wodis, Haufe PowerHaus, and GFAD. If you use a different system, we adapt."
+        "Wir arbeiten uns in Ihre bestehende Umgebung ein, darunter DATEV, Domus, Wodis, Haufe PowerHaus, GFAD, Ticket-Systeme, Cloud-Ablagen und E-Mail-Workflows.",
+        "We adapt to your existing environment, including DATEV, Domus, Wodis, Haufe PowerHaus, GFAD, ticket systems, cloud storage, and email workflows."
       ),
     },
     {
-      q: t("Wie ist die Datensicherheit gewährleistet?", "How is data security ensured?"),
+      q: t("Wie ist die Datensicherheit gewährleistet?", "How is data security handled?"),
       a: t(
-        "Alle Prozesse sind DSGVO-konform. Wir verwenden verschlüsselte Verbindungen, sichere Cloud-Systeme und haben strenge Datenschutzvereinbarungen mit allen Mitarbeitern.",
-        "All processes are GDPR-compliant. We use encrypted connections, secure cloud systems, and have strict data protection agreements with all employees."
+        "Wir arbeiten mit rollenbasierten Zugängen, dokumentierten Prozessen, verschlüsselten Systemen und klaren Freigaben. Sensible Aufgaben bleiben nachvollziehbar.",
+        "We use role-based access, documented processes, encrypted systems, and clear approvals. Sensitive tasks remain traceable."
       ),
     },
     {
       q: t("Wie schnell können Sie starten?", "How quickly can you start?"),
       a: t(
-        "Nach dem Erstgespräch erhalten Sie innerhalb von 48 Stunden ein Angebot. Das Onboarding dauert in der Regel zwei Wochen, danach sind wir voll einsatzbereit.",
-        "After the discovery call, you receive a proposal within 48 hours. Onboarding typically takes two weeks, after which we are fully operational."
+        "Nach dem Erstgespräch erhalten Sie innerhalb von 48 Stunden ein Angebot. Das Onboarding dauert in der Regel etwa zwei Wochen.",
+        "After the discovery call, you receive a proposal within 48 hours. Onboarding usually takes about two weeks."
       ),
     },
     {
       q: t("Gibt es einen Mindestvertrag?", "Is there a minimum contract?"),
       a: t(
-        "Nein. Wir arbeiten ohne Mindestvertragslaufzeit. Sie können die Zusammenarbeit jederzeit mit einer Frist von 30 Tagen beenden.",
-        "No. We work without a minimum contract term. You can end the collaboration at any time with 30 days' notice."
+        "Wir können mit einer klar begrenzten Pilotphase starten. So testen Sie Zusammenarbeit, Qualität und Geschwindigkeit, bevor Sie mehr Aufgaben auslagern.",
+        "We can start with a clearly limited pilot phase, so you can test collaboration, quality, and speed before outsourcing more tasks."
       ),
     },
   ]
 
   return (
-    <section className="bg-cream py-24">
+    <section id="faq" className="bg-cream py-24">
       <div className="mx-auto max-w-3xl px-6">
         <ScrollReveal>
           <div className="mb-16 text-center">
@@ -65,11 +65,12 @@ export function FAQ() {
           {items.map((item, i) => {
             const isOpen = openIndex === i
             return (
-              <ScrollReveal key={i} delay={i * 60}>
+              <ScrollReveal key={item.q} delay={i * 60}>
                 <div className="overflow-hidden rounded-sm bg-white shadow-sm">
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="flex w-full items-center justify-between px-6 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
                     <span className="pr-4 text-base font-semibold text-navy">{item.q}</span>
                     <span
@@ -83,7 +84,7 @@ export function FAQ() {
                   <div
                     className="accordion-content"
                     style={{
-                      maxHeight: isOpen ? "200px" : "0px",
+                      maxHeight: isOpen ? "220px" : "0px",
                       opacity: isOpen ? 1 : 0,
                     }}
                   >

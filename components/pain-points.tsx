@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Clock, Users, TrendingUp } from "lucide-react"
+import { Clock, TrendingUp, Users } from "lucide-react"
 
 export function PainPoints() {
   const { t } = useLanguage()
@@ -13,8 +13,8 @@ export function PainPoints() {
       icon: Clock,
       title: t("Zu viel Routinearbeit", "Too Much Routine Work"),
       desc: t(
-        "Buchhaltung, Mahnwesen und Korrespondenz binden wertvolle Kapazitäten, die Ihnen für strategische Aufgaben fehlen.",
-        "Accounting, collections, and correspondence consume valuable capacity that you need for strategic tasks."
+        "Buchhaltungsvorbereitung, Mahnwesen und Korrespondenz binden Kapazitäten, die Sie für Eigentümer, Vermietung und Wachstum brauchen.",
+        "Accounting preparation, dunning, and correspondence consume capacity you need for owners, leasing, and growth."
       ),
     },
     {
@@ -22,8 +22,8 @@ export function PainPoints() {
       icon: Users,
       title: t("Fachkräftemangel", "Staff Shortage"),
       desc: t(
-        "Qualifizierte Sachbearbeiter sind schwer zu finden und zu halten -- besonders im aktuellen Arbeitsmarkt.",
-        "Qualified clerks are hard to find and retain -- especially in the current labor market."
+        "Qualifizierte Sachbearbeiter sind schwer zu finden, teuer einzuarbeiten und oft genau dann knapp, wenn neue Mandate kommen.",
+        "Qualified administrators are hard to find, expensive to train, and often unavailable right when new mandates arrive."
       ),
     },
     {
@@ -31,8 +31,8 @@ export function PainPoints() {
       icon: TrendingUp,
       title: t("Wachstum ohne Overhead", "Scale Without Overhead"),
       desc: t(
-        "Mehr Einheiten verwalten, ohne proportional mehr Personal einstellen zu müssen.",
-        "Manage more units without having to hire proportionally more staff."
+        "Standardisierte Back-Office-Prozesse schaffen Luft, damit Sie mehr Einheiten übernehmen können, ohne jeden Prozess intern neu zu bauen.",
+        "Standardized back-office workflows create room to take on more units without rebuilding every process internally."
       ),
     },
   ]
@@ -46,15 +46,15 @@ export function PainPoints() {
               {t("Herausforderungen", "Challenges")}
             </span>
             <h2 className="font-serif text-4xl font-bold text-navy md:text-5xl text-balance">
-              {t("Kennen Sie diese Probleme?", "Do You Face These Challenges?")}
+              {t("Warum auslagern?", "Why Outsource?")}
             </h2>
           </div>
         </ScrollReveal>
 
         <div className="grid gap-8 md:grid-cols-3">
           {points.map((point, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="card-gold-border relative overflow-hidden rounded-sm bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+            <ScrollReveal key={point.num} delay={i * 100}>
+              <div className="card-gold-border relative min-h-64 overflow-hidden rounded-sm bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
                 <span className="absolute -top-2 right-4 font-serif text-8xl font-bold text-navy/[0.04] select-none">
                   {point.num}
                 </span>

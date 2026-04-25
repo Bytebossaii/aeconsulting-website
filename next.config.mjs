@@ -34,10 +34,6 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
-          source: "/",
-          destination: "/code.html",
-        },
-        {
           source: "/gdpr",
           destination: "/gdpr.html",
         },

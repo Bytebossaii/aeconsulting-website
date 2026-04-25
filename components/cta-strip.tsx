@@ -12,15 +12,12 @@ export function CTAStrip() {
         <ScrollReveal>
           <div>
             <h2 className="font-serif text-3xl font-bold text-navy md:text-4xl text-balance">
-              {t(
-                "Bereit, Ihr Back-Office auszulagern?",
-                "Ready to outsource your back office?"
-              )}
+              {t("Testen Sie Outsourcing ohne Großprojekt.", "Test outsourcing without a giant project.")}
             </h2>
-            <p className="mt-3 text-base text-navy/70">
+            <p className="mt-3 max-w-2xl text-base text-navy/70">
               {t(
-                "Vereinbaren Sie ein unverbindliches Erstgespräch und erfahren Sie, wie wir Sie entlasten können.",
-                "Schedule a free discovery call and find out how we can unburden you."
+                "Starten Sie mit einem kleinen, messbaren Aufgabenpaket. Wenn Qualität und Geschwindigkeit stimmen, skalieren wir sauber weiter.",
+                "Start with a small, measurable task package. If quality and speed fit, we scale cleanly from there."
               )}
             </p>
           </div>
@@ -30,7 +27,7 @@ export function CTAStrip() {
             href="#contact"
             className="shrink-0 rounded-sm bg-navy px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-navy-light"
           >
-            {t("Jetzt starten", "Get Started")}
+            {t("Pilotphase anfragen", "Request a Pilot")}
           </a>
         </ScrollReveal>
       </div>
